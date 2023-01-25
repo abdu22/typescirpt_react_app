@@ -1,0 +1,34 @@
+.nav-links {
+    display: flex;
+    justify-content:left;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+  
+  .nav-link:hover {
+    background-color: #000;
+  }
+  button.nav-link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 1rem;
+    background-color: #333;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button.nav-link:hover {
+    background-color: #000;
+  }
+  
