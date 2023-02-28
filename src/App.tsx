@@ -6,19 +6,32 @@ import Home from './Component/Home';
 import About from './Component/About';
 import "./Navigation.css";
 import { Button } from "@material-ui/core";
+import AddressPanel from './Component/AddressPanel';
+
+export type Address = {
+    city: string,
+    state: string,
+} 
 
 function App() {
 
-   const [name, setName] = useState("");
-   console.log('App / name : ' , name);
+   const [name, setName] = useState<string>("");
+   const [age, setAge] = useState<number>(0);
+   const [address, setAddress] = useState<Address>({city: "", state: ""});
+
 
    return (
      <Router>
         <div>
             <Navigation />
             <Routes>
-            <Route  path="/" element ={ <Home setName={setName}/>} />
-            <Route  path="/about" element ={ <About name={name}/>} />
+            <Route  path="/" element ={ <Home setName={setName} name={name} address={address} setAddress={setAddress}/>} />
+            <Route  path="/about" element ={ 
+                   <About name={name}>
+                      <AddressPanel address={address}/>
+                   </About>
+                } 
+            />
             </Routes>
             
         </div>
